@@ -28,20 +28,23 @@ async function handleGetAll(req, res) {
 
 async function handleGetOne(req, res) {
   const id = req.params.id;
-  let theRecord = await req.model.get(id)
+  let theRecord = await req.model.get(id);
   res.status(200).json(theRecord);
 }
 
 async function handleCreate(req, res) {
+  console.log(req.body);
   let obj = req.body;
+  console.log(obj);
   let newRecord = await req.model.create(obj);
+  console.log(newRecord);
   res.status(201).json(newRecord);
 }
 
 async function handleUpdate(req, res) {
   const id = req.params.id;
   const obj = req.body;
-  let updatedRecord = await req.model.update(id, obj)
+  let updatedRecord = await req.model.update(id, obj);
   res.status(200).json(updatedRecord);
 }
 
