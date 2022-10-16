@@ -1,14 +1,14 @@
 'use strict';
 
 const express = require('express');
-const cors = require('cors');  // 1
-const morgan = require('morgan');  // 2
+const cors = require('cors');
+const morgan = require('morgan');
 
 const notFound = require('./error-handlers/404.js');
 const errorHandler = require('./error-handlers/500.js');
 const logger = require('./middleware/logger.js');
 const v1Routes = require('./routes/v1');
-const authRoutes = require('./auth/routes.js');  // 3
+const authRoutes = require('./auth/routes.js');
 
 const app = express();
 app.use(cors());
